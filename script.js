@@ -10,9 +10,14 @@ function Book (title,author,pages,read) {
      }
   }
 
-function addBookToLibrary() {
-  // do stuff here
+function addBookToLibrary(bookToBeAdded) {
+  myLibrary.push(bookToBeAdded);
 }
 
 
-const book = new Book ("Thud", "Terry Pratchett", "300", "read it")
+const book1 = new Book ("Thud", "Terry Pratchett", "300", true);
+const book2 = new Book ("The Hobbit", "J.R.R. Tolkein", "250", true)
+
+addBookToLibrary(book1);
+addBookToLibrary(book2)
+console.log(myLibrary);
