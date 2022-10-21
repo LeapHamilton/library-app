@@ -19,5 +19,8 @@ const book1 = new Book ("Thud", "Terry Pratchett", "300", true);
 const book2 = new Book ("The Hobbit", "J.R.R. Tolkein", "250", true)
 
 addBookToLibrary(book1);
-addBookToLibrary(book2)
-console.log(myLibrary);
+addBookToLibrary(book2);
+
+document.getElementById("gridTable").textContent += myLibrary[0].title;
+document.getElementById("gridTable").textContent += myLibrary[1].title;
+

@@ -1,9 +1,35 @@
 body {
-    
+    margin: 0;
+    padding: 0;
+    font-size: 1em;
     background-image: url(/librarypic.jpg);
     background-size: cover;
-    min-height: 150%;
+    
 }
 
+.container {
+    border: 3px solid;
+    border-color: yellow;
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    height: 100vh;
+}
+
+.table {
+    display: grid;
+    border: 3px solid;
+    background-color: #DCDCDC;
+    border-color: green;
+    border-radius: 5px;
+    width: 550px;
+    height: 200px;
+    grid-template-columns: 1fr 100px;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-row-gap:2px;
+ 
+    margin-top: 3em;
+    margin-right: 2em;
+}
 
 
