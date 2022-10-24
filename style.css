@@ -22,7 +22,7 @@ body {
 }
 
 caption {
-    background-color:#708090;
+    background-color:#DDC7A0;
     font-size: 2em;
     border: 3px solid;
     padding: 10px;
@@ -43,7 +43,7 @@ table {
 
 th {
     text-align: left;
-    background-color:#848482;
+    background-color:#989898;
 }
 th,
 td {

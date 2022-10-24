@@ -17,12 +17,29 @@ function addBookToLibrary(bookToBeAdded) {
 
 const book1 = new Book ("Thud", "Terry Pratchett", "300", "read it");
 const book2 = new Book ("The Hobbit", "J.R.R. Tolkein", "250", "not read");
-const book3 = new Book ("How to Sell the Stars", "Richard J. Dowling", "300", "read it" )
+const book3 = new Book ("How to Sell the Stars", "Richard J. Dowling", "300", "read it" );
 addBookToLibrary(book1);
 addBookToLibrary(book2);
 addBookToLibrary(book3);
 
+const theButton = document.getElementById("btn");
 
+  theButton.addEventListener("click", function () {
+  let addBookTitle = prompt ("What's the title?"); 
+  let addBookAuthor = prompt ("Who's the author?")
+  let addBookPages = prompt ("How many pages does the book have?")
+  let addBookFinished = prompt ("Have you read this book?")
+  
+  const addBook = new Book (addBookTitle, addBookAuthor, addBookPages, "read it");
+  
+
+  addBookToLibrary(addBook);
+drawTable();
+  })
+
+
+
+function drawTable() {
 
 let table = document.getElementById('table');
 for (let book of myLibrary) {
@@ -44,10 +61,9 @@ for (let book of myLibrary) {
   td4.textContent = book.read;
   tr.appendChild(td4);
 
-
-/*let td1 = document.createElement('td')
-td1.textContent = book.info();
-*/
   table.appendChild(tr);
-
 }
+};
+
+
+drawTable();
