@@ -32,10 +32,15 @@ const theButton = document.getElementById("btn");
   
   const addBook = new Book (addBookTitle, addBookAuthor, addBookPages, "read it");
   
+  for (let book of myLibrary) {
+    table.deleteRow(1);
+
+  }
 
   addBookToLibrary(addBook);
-drawTable();
-  })
+
+  drawTable();
+  });
 
 
 
