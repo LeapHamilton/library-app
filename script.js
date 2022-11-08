@@ -24,14 +24,29 @@ addBookToLibrary(book3);
 
 const theButton = document.getElementById("btn");
 
+
   theButton.addEventListener("click", function () {
-  let addBookTitle = prompt ("What's the title?"); 
+  
+  let form = document.createElement("form");
+  form.setAttribute("method", "post");
+  form.setAttribute("action", "submit.php");
+
+  let title= document.createElement("input");
+  title.setAttribute("type", "text");
+  title.setAttribute("name", "title");
+  title.setAttribute("placeholder", "Title");
+
+  form.appendChild(title);
+  document.getElementsByClassName("container")[0].appendChild(form);
+  
+    /*let addBookTitle = prompt ("What's the title?"); 
   let addBookAuthor = prompt ("Who's the author?")
   let addBookPages = prompt ("How many pages does the book have?")
   let addBookFinished = prompt ("Have you read this book?")
   
   const addBook = new Book (addBookTitle, addBookAuthor, addBookPages, "read it");
-  
+  */
+
   for (let book of myLibrary) {
     table.deleteRow(1);
 
