@@ -31,21 +31,58 @@ const theButton = document.getElementById("btn");
   form.setAttribute("method", "post");
   form.setAttribute("action", "submit.php");
 
-  let title= document.createElement("input");
-  title.setAttribute("type", "text");
-  title.setAttribute("name", "title");
-  title.setAttribute("placeholder", "Title");
+  let newline = document.createElement("p");
 
-  form.appendChild(title);
+  let newTitle = document.createElement("input");
+  newTitle.setAttribute("type", "text");
+  newTitle.setAttribute("name", "title");
+  newTitle.setAttribute("placeholder", "Title");
+
+  let newAuthor = document.createElement("input");
+  newAuthor.setAttribute("type", "text");
+  newAuthor.setAttribute("name", "author");
+  newAuthor.setAttribute("placeholder", "Author");
+
+  let numberOfPages = document.createElement("input");
+  numberOfPages.setAttribute("type", "number");
+  numberOfPages.setAttribute("name", "numberOfPages");
+  numberOfPages.setAttribute("placeholder", "2");
+
+  let readIt = document.createElement("input");
+  readIt.setAttribute("type", "radio");
+
+  let submitButton = document.createElement("input");
+submitButton.setAttribute("type", "submit");
+submitButton.setAttribute("value", "Submit");
+
+
+
+  
+  form.appendChild(newTitle);
+  form.appendChild(newline);
+  form.appendChild(newAuthor);
+  form.appendChild(newline);
+  form.appendChild(numberOfPages);
+  form.appendChild(newline);
+  form.appendChild(readIt);
+  form.appendChild(newline);
+  form.appendChild(submitButton);
+
+
+
+
   document.getElementsByClassName("container")[0].appendChild(form);
   
     /*let addBookTitle = prompt ("What's the title?"); 
   let addBookAuthor = prompt ("Who's the author?")
   let addBookPages = prompt ("How many pages does the book have?")
   let addBookFinished = prompt ("Have you read this book?")
-  
-  const addBook = new Book (addBookTitle, addBookAuthor, addBookPages, "read it");
+const addBook = new Book (addBookTitle, addBookAuthor, addBookPages, "read it");
+
+
   */
+  const addBook = new Book (newTitle, newAuthor, numberOfPages, "read it").value;
+  
 
   for (let book of myLibrary) {
     table.deleteRow(1);

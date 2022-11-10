@@ -36,8 +36,6 @@ table {
     width: 550px;
     height: 200px;
     margin-top: 2em;
-   
-   
     border-collapse: collapse;
 }
 
@@ -48,7 +46,6 @@ th {
 th,
 td {
     border: 3px solid;
-  
     padding: 10px;
     
 }
@@ -63,7 +60,6 @@ table tr:nth-child(odd) {
 
 
   button {
-    
     padding:0.35em 1.2em;
     background-color: #708090;
    border: 0.1em solid black;
@@ -83,4 +79,10 @@ button:hover {
 color:#000000;
 background-color:darkgrey;
 }
-  }
+
+form {
+
+    display: flex;
+    flex-direction: column;
+}
+  
