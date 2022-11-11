@@ -81,18 +81,23 @@ const addBook = new Book (addBookTitle, addBookAuthor, addBookPages, "read it");
 
 
   */
-  const addBook = new Book (newTitle, newAuthor, numberOfPages, "read it").value;
+
+  document.querySelectorAll("form")[0].addEventListener("submit", nowAddBook);
+
+  function nowAddBook () {
+  
+  const addBook = new Book (newTitle.value, newAuthor.value, numberOfPages.value, "read it");
   
 
   for (let book of myLibrary) {
     table.deleteRow(1);
-
+  
   }
 
   addBookToLibrary(addBook);
 
   drawTable();
-  });
+  }});
 
 
 
