@@ -5,9 +5,9 @@ function Book (title,author,pages,read) {
     this.author = author
     this.pages = pages
     this.read = read
-    this.info = function (){
-      return `${this.title} by ${this.author}, ${this.pages} pages, ${this.read}`
-     }
+    //this.info = function (){
+      //return `${this.title} by ${this.author}, ${this.pages} pages, ${this.read}`
+    // }
   }
 
 function addBookToLibrary(bookToBeAdded) {
@@ -46,10 +46,21 @@ const theButton = document.getElementById("btn");
   let numberOfPages = document.createElement("input");
   numberOfPages.setAttribute("type", "number");
   numberOfPages.setAttribute("name", "numberOfPages");
-  numberOfPages.setAttribute("placeholder", "2");
+  numberOfPages.setAttribute("placeholder", "200");
 
   let readIt = document.createElement("input");
   readIt.setAttribute("type", "radio");
+  readIt.setAttribute("name", "read");
+  readIt.setAttribute("value", "Read it");
+
+  let readLabel = document.createElement("label");
+
+  let notRead = document.createElement("input");
+  notRead.setAttribute("type", "radio");
+  notRead.setAttribute("name", "read");
+  notRead.setAttribute("value", "Haven't read it");
+
+let notReadLabel = document.createElement("label");
 
   let submitButton = document.createElement("input");
 submitButton.setAttribute("type", "submit");
@@ -59,28 +70,19 @@ submitButton.setAttribute("value", "Submit");
 
   
   form.appendChild(newTitle);
-  form.appendChild(newline);
   form.appendChild(newAuthor);
-  form.appendChild(newline);
   form.appendChild(numberOfPages);
-  form.appendChild(newline);
-  form.appendChild(readIt);
-  form.appendChild(newline);
+  form.appendChild(readIt).innerHTML="Read it!";
+  //form.appendChild(readLabel).innerHTML = "Read it!";
+  form.appendChild(notRead).innerHTML = "Haven't read it!";
+  //form.appendChild(notReadLabel).innerHtml = "Haven't read it!";
+
   form.appendChild(submitButton);
 
 
 
 
   document.getElementsByClassName("container")[0].appendChild(form);
-  
-    /*let addBookTitle = prompt ("What's the title?"); 
-  let addBookAuthor = prompt ("Who's the author?")
-  let addBookPages = prompt ("How many pages does the book have?")
-  let addBookFinished = prompt ("Have you read this book?")
-const addBook = new Book (addBookTitle, addBookAuthor, addBookPages, "read it");
-
-
-  */
 
   document.querySelectorAll("form")[0].addEventListener("submit", nowAddBook);
 
@@ -95,6 +97,8 @@ const addBook = new Book (addBookTitle, addBookAuthor, addBookPages, "read it");
   }
 
   addBookToLibrary(addBook);
+
+  form.remove();
 
   drawTable();
   }});

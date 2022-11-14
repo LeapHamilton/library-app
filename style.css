@@ -81,8 +81,34 @@ background-color:darkgrey;
 }
 
 form {
-
+    position:absolute;
+    left: 450px;
+    top: 150px;
     display: flex;
     flex-direction: column;
 }
   
+input {
+    padding: 10px;
+    margin: 8px 0;
+    border:solid black;
+    border-radius: 6px;
+    background-color:#DDC7A0;
+    outline: none;
+    font-size: 2em;
+}
+
+input:hover {
+    background-color: lightgoldenrodyellow;
+}
+
+input[type=radio]{
+    display:flex;
+    flex-direction: column;
+    margin: auto;
+}
+
+input[type=submit] {
+    margin-top: 50px;
+    cursor: pointer;
+}
