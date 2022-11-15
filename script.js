@@ -48,19 +48,27 @@ const theButton = document.getElementById("btn");
   numberOfPages.setAttribute("name", "numberOfPages");
   numberOfPages.setAttribute("placeholder", "200");
 
+  let readLabel = document.createElement("label");
+  readLabel.innerHTML = "Read it!"
+  
   let readIt = document.createElement("input");
   readIt.setAttribute("type", "radio");
   readIt.setAttribute("name", "read");
   readIt.setAttribute("value", "Read it");
 
-  let readLabel = document.createElement("label");
+  readLabel.appendChild(readIt);
+  
+
+  let notReadLabel = document.createElement("label");
+  notReadLabel.innerHTML = "Haven't read it!"
 
   let notRead = document.createElement("input");
   notRead.setAttribute("type", "radio");
   notRead.setAttribute("name", "read");
   notRead.setAttribute("value", "Haven't read it");
 
-let notReadLabel = document.createElement("label");
+  notReadLabel.appendChild(notRead);
+
 
   let submitButton = document.createElement("input");
 submitButton.setAttribute("type", "submit");
@@ -72,9 +80,9 @@ submitButton.setAttribute("value", "Submit");
   form.appendChild(newTitle);
   form.appendChild(newAuthor);
   form.appendChild(numberOfPages);
-  form.appendChild(readIt).innerHTML="Read it!";
+  form.appendChild(readLabel)
   //form.appendChild(readLabel).innerHTML = "Read it!";
-  form.appendChild(notRead).innerHTML = "Haven't read it!";
+  form.appendChild(notReadLabel);
   //form.appendChild(notReadLabel).innerHtml = "Haven't read it!";
 
   form.appendChild(submitButton);

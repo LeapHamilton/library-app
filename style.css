@@ -105,7 +105,7 @@ input:hover {
 input[type=radio]{
     display:flex;
     flex-direction: column;
-    margin: auto;
+    
 }
 
 input[type=submit] {
