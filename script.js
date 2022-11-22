@@ -80,11 +80,8 @@ submitButton.setAttribute("value", "Submit");
   form.appendChild(newTitle);
   form.appendChild(newAuthor);
   form.appendChild(numberOfPages);
-  form.appendChild(readLabel)
-  //form.appendChild(readLabel).innerHTML = "Read it!";
+  form.appendChild(readLabel);
   form.appendChild(notReadLabel);
-  //form.appendChild(notReadLabel).innerHtml = "Haven't read it!";
-
   form.appendChild(submitButton);
 
 
@@ -111,11 +108,12 @@ submitButton.setAttribute("value", "Submit");
   drawTable();
   }});
 
-
+  
 
 function drawTable() {
 
-let table = document.getElementById('table');
+let table = document.getElementById('tbody');
+
 for (let book of myLibrary) {
 	let tr = document.createElement('tr');
   
@@ -135,9 +133,40 @@ for (let book of myLibrary) {
   td4.textContent = book.read;
   tr.appendChild(td4);
 
+  let td5 = document.createElement("button");
+  td5.setAttribute("type" , "button");
+  td5.setAttribute("class", "tableButtons");
+  //td5.textContent = myLibrary.indexOf(book);
+  td5.setAttribute("id", myLibrary.indexOf(book));
+  td5.textContent = td5.getAttribute("id");
+  tr.appendChild(td5);
+  
+  
   table.appendChild(tr);
+
+  
 }
 };
 
 
+
+
 drawTable();
+
+const buttonListeners = document.querySelectorAll(".tableButtons");
+
+  buttonListeners.forEach(buttonListener => {
+  
+    buttonListener.addEventListener("click", function handleClick (event) {
+    console.log (this.id);
+
+  let rowToRemove = this.id;
+  myLibrary.splice(rowToRemove, 1);
+  
+  document.getElementById("tbody").textContent = "";
+
+  drawTable();
+
+  
+    });
+  });
