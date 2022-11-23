@@ -163,8 +163,8 @@ const buttonListeners = document.querySelectorAll(".tableButtons");
   let rowToRemove = this.id;
   myLibrary.splice(rowToRemove, 1);
   
-  document.getElementById("tbody").textContent = "";
-
+  document.getElementById('tbody').textContent="";
+ 
   drawTable();
 
   
