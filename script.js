@@ -23,7 +23,7 @@ addBookToLibrary(book2);
 addBookToLibrary(book3);
 
 const theButton = document.getElementById("btn");
-
+let isFormLive = false;
 
   theButton.addEventListener("click", function () {
   
@@ -57,7 +57,6 @@ const theButton = document.getElementById("btn");
   readIt.setAttribute("value", "Read it");
 
   readLabel.appendChild(readIt);
-  
 
   let notReadLabel = document.createElement("label");
   notReadLabel.innerHTML = "Haven't read it!"
@@ -86,10 +85,15 @@ submitButton.setAttribute("value", "Submit");
 
 
 
+if (isFormLive === false) {
 
   document.getElementsByClassName("container")[0].appendChild(form);
 
+  isFormLive = true;
+
   document.querySelectorAll("form")[0].addEventListener("submit", nowAddBook);
+
+}
 
   function nowAddBook () {
   
@@ -105,7 +109,10 @@ submitButton.setAttribute("value", "Submit");
 
   form.remove();
 
+isFormLive = false;
+
   drawTable();
+
   }});
 
   
@@ -145,7 +152,7 @@ for (let book of myLibrary) {
   table.appendChild(tr);
 
   
-}
+};
 };
 
 
