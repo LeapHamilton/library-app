@@ -109,9 +109,9 @@ if (isFormLive === false) {
 
   form.remove();
 
-isFormLive = false;
+  isFormLive = false;
 
-  drawTable();
+   drawTable();
 
   }});
 
@@ -153,6 +153,7 @@ for (let book of myLibrary) {
 
   
 };
+deleteRow();
 };
 
 
@@ -160,6 +161,8 @@ for (let book of myLibrary) {
 
 drawTable();
 
+
+function deleteRow() {
 const buttonListeners = document.querySelectorAll(".tableButtons");
 
   buttonListeners.forEach(buttonListener => {
@@ -173,7 +176,12 @@ const buttonListeners = document.querySelectorAll(".tableButtons");
   document.getElementById('tbody').textContent="";
  
   drawTable();
-
+  return console.log(myLibrary);
   
-    });
-  });
+  
+
+ 
+
+    })
+  })
+};
