@@ -1,4 +1,20 @@
 let myLibrary = [];
+let hasUserReadTheBook;
+
+document.body.addEventListener("click", function (event) {
+  console.log(event.target.id);
+  
+  if (event.target.id == "radioRead") {
+    
+    hasUserReadTheBook = "Read it";
+} 
+  else if (event.target.id == "radioUnread") {
+    hasUserReadTheBook = "Not Read"};
+return hasUserReadTheBook;
+});
+
+
+
 
 function Book (title,author,pages,read) {
     this.title = title
@@ -54,17 +70,17 @@ let isFormLive = false;
   let readIt = document.createElement("input");
   readIt.setAttribute("type", "radio");
   readIt.setAttribute("name", "read");
-  readIt.setAttribute("value", "Read it");
+  readIt.setAttribute("id", "radioRead");
 
   readLabel.appendChild(readIt);
 
   let notReadLabel = document.createElement("label");
-  notReadLabel.innerHTML = "Haven't read it!"
+  notReadLabel.innerHTML = "Haven't read it!";
 
   let notRead = document.createElement("input");
   notRead.setAttribute("type", "radio");
   notRead.setAttribute("name", "read");
-  notRead.setAttribute("value", "Haven't read it");
+  notRead.setAttribute("id", "radioUnread");
 
   notReadLabel.appendChild(notRead);
 
@@ -83,21 +99,25 @@ submitButton.setAttribute("value", "Submit");
   form.appendChild(notReadLabel);
   form.appendChild(submitButton);
 
+  
 
 
 if (isFormLive === false) {
 
   document.getElementsByClassName("container")[0].appendChild(form);
 
-  isFormLive = true;
+
+  isFormLive = true;  
 
   document.querySelectorAll("form")[0].addEventListener("submit", nowAddBook);
-
+  
 }
 
   function nowAddBook () {
   
-  const addBook = new Book (newTitle.value, newAuthor.value, numberOfPages.value, "read it");
+    
+
+  const addBook = new Book (newTitle.value, newAuthor.value, numberOfPages.value, hasUserReadTheBook);
   
 
   for (let book of myLibrary) {
@@ -114,7 +134,6 @@ if (isFormLive === false) {
    drawTable();
 
   }});
-
   
 
 function drawTable() {
@@ -145,7 +164,8 @@ for (let book of myLibrary) {
   td5.setAttribute("class", "tableButtons");
   //td5.textContent = myLibrary.indexOf(book);
   td5.setAttribute("id", myLibrary.indexOf(book));
-  td5.textContent = td5.getAttribute("id");
+  //td5.textContent = td5.getAttribute("id");
+  td5.textContent = "x";
   tr.appendChild(td5);
   
   
@@ -157,10 +177,7 @@ deleteRow();
 };
 
 
-
-
 drawTable();
-
 
 function deleteRow() {
 const buttonListeners = document.querySelectorAll(".tableButtons");
@@ -168,7 +185,7 @@ const buttonListeners = document.querySelectorAll(".tableButtons");
   buttonListeners.forEach(buttonListener => {
   
     buttonListener.addEventListener("click", function handleClick (event) {
-    console.log (this.id);
+   
 
   let rowToRemove = this.id;
   myLibrary.splice(rowToRemove, 1);
@@ -177,10 +194,6 @@ const buttonListeners = document.querySelectorAll(".tableButtons");
  
   drawTable();
   return console.log(myLibrary);
-  
-  
-
- 
 
     })
   })
