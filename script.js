@@ -162,9 +162,9 @@ for (let book of myLibrary) {
   let td5 = document.createElement("button");
   td5.setAttribute("type" , "button");
   td5.setAttribute("class", "tableButtons");
-  //td5.textContent = myLibrary.indexOf(book);
+ 
   td5.setAttribute("id", myLibrary.indexOf(book));
-  //td5.textContent = td5.getAttribute("id");
+ 
   td5.textContent = "x";
   tr.appendChild(td5);
   
