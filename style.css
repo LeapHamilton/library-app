@@ -1,4 +1,6 @@
-* {
+*,
+*:before,
+*:after {
     box-sizing: border-box
 } 
 
@@ -95,7 +97,7 @@ input {
     border-radius: 6px;
     background-color:#DDC7A0;
     outline: none;
-    font-size: 2em;
+    font-size: 1.5em;
 }
 
 input:hover {
@@ -103,12 +105,34 @@ input:hover {
 }
 
 input[type=radio]{
-    display:flex;
-    flex-direction: column;
+    
+    color:#DDC7A0;
+    justify-content: center;
+    align-content: center;
     
 }
 
+
+.label {
+    
+    padding: 10px;
+    font-family: system-ui, sans-serif;
+    font-size: 1.3rem;
+    border: #DDC7A0;
+    border-radius: 6px;
+    font-weight: bold;
+    line-height: 1.1;
+
+}
+
 input[type=submit] {
-    margin-top: 50px;
+    margin-top: 20px;
     cursor: pointer;
+}
+
+.tableButtons {
+opacity: 0.5;
+border: none;
+margin: 10px;
+font-size: 1em;
 }

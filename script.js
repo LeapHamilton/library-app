@@ -65,7 +65,8 @@ let isFormLive = false;
   numberOfPages.setAttribute("placeholder", "200");
 
   let readLabel = document.createElement("label");
-  readLabel.innerHTML = "Read it!"
+  readLabel.innerHTML = "Read it! ";
+  readLabel.setAttribute("class", "label");
   
   let readIt = document.createElement("input");
   readIt.setAttribute("type", "radio");
@@ -75,7 +76,8 @@ let isFormLive = false;
   readLabel.appendChild(readIt);
 
   let notReadLabel = document.createElement("label");
-  notReadLabel.innerHTML = "Haven't read it!";
+  notReadLabel.innerHTML = "Haven't read it! ";
+  notReadLabel.setAttribute ("class", "label");
 
   let notRead = document.createElement("input");
   notRead.setAttribute("type", "radio");
@@ -165,7 +167,7 @@ for (let book of myLibrary) {
  
   td5.setAttribute("id", myLibrary.indexOf(book));
  
-  td5.textContent = "x";
+  td5.textContent = "X";
   tr.appendChild(td5);
   
   
