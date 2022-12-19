@@ -115,14 +115,25 @@ input[type=radio]{
 
 .label {
     
-    padding: 10px;
+    padding:10px;
     font-family: system-ui, sans-serif;
     font-size: 1.3rem;
     border: #DDC7A0;
     border-radius: 6px;
-    font-weight: bold;
     line-height: 1.1;
 
+}
+
+.radioLabels {
+    padding: 10px;
+    font-size: 1.3rem;
+    border: solid black;
+    background-color: #DDC7A0;
+    border-radius: 6px;
+}
+
+.radioLabels:hover {
+    background-color: lightgoldenrodyellow;
 }
 
 input[type=submit] {
@@ -132,6 +143,7 @@ input[type=submit] {
 
 .tableButtons {
 opacity: 0.5;
+background-color: inherit;
 border: none;
 margin: 10px;
 font-size: 1em;

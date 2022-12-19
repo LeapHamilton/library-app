@@ -64,8 +64,11 @@ let isFormLive = false;
   numberOfPages.setAttribute("name", "numberOfPages");
   numberOfPages.setAttribute("placeholder", "200");
 
+  let radioLabels = document.createElement('div');
+  radioLabels.setAttribute('class', 'radioLabels')
+
   let readLabel = document.createElement("label");
-  readLabel.innerHTML = "Read it! ";
+  readLabel.innerHTML = "Read it ";
   readLabel.setAttribute("class", "label");
   
   let readIt = document.createElement("input");
@@ -76,7 +79,7 @@ let isFormLive = false;
   readLabel.appendChild(readIt);
 
   let notReadLabel = document.createElement("label");
-  notReadLabel.innerHTML = "Haven't read it! ";
+  notReadLabel.innerHTML = "Haven't read it ";
   notReadLabel.setAttribute ("class", "label");
 
   let notRead = document.createElement("input");
@@ -85,6 +88,9 @@ let isFormLive = false;
   notRead.setAttribute("id", "radioUnread");
 
   notReadLabel.appendChild(notRead);
+
+  radioLabels.appendChild(readLabel);
+  radioLabels.appendChild(notReadLabel);
 
 
   let submitButton = document.createElement("input");
@@ -97,8 +103,9 @@ submitButton.setAttribute("value", "Submit");
   form.appendChild(newTitle);
   form.appendChild(newAuthor);
   form.appendChild(numberOfPages);
-  form.appendChild(readLabel);
-  form.appendChild(notReadLabel);
+  //form.appendChild(readLabel);
+  //form.appendChild(notReadLabel);
+  form.appendChild(radioLabels);
   form.appendChild(submitButton);
 
   
@@ -161,15 +168,18 @@ for (let book of myLibrary) {
   td4.textContent = book.read;
   tr.appendChild(td4);
 
+
+  let deleteColumn = document.createElement('td');
+
   let td5 = document.createElement("button");
   td5.setAttribute("type" , "button");
   td5.setAttribute("class", "tableButtons");
- 
   td5.setAttribute("id", myLibrary.indexOf(book));
  
   td5.textContent = "X";
-  tr.appendChild(td5);
-  
+  //tr.appendChild(td5);
+  deleteColumn.appendChild(td5);
+  tr.appendChild(deleteColumn);
   
   table.appendChild(tr);
 
